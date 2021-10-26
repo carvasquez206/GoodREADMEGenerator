@@ -66,6 +66,7 @@ Here are some guidelines to help you get started:
 https://github.com/carvasquez206/ReadMEGenarataaah
 
 ## Link to Live Github App
+https://carvasquez206.github.io/ReadMEGenarataaah/
 
 ## Screenshot
 

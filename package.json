@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/carvasquez206/ReadMEGenarataaah/issues"
   },
-  "homepage": "https://github.com/carvasquez206/ReadMEGenarataaah#readme"
+  "homepage": "https://github.com/carvasquez206/ReadMEGenarataaah#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
