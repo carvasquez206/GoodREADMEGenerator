@@ -63,6 +63,7 @@ Here are some guidelines to help you get started:
 ## Walkthrough Video
 
 ## Link to Repository
+https://github.com/carvasquez206/ReadMEGenarataaah
 
 ## Link to Live Github App
 
@@ -77,7 +78,3 @@ You are required to submit the following for review:
 * A sample README.md file for a project repository generated using your application
 
 * The URL of the GitHub repository, with a unique name and a README describing the project
-
-## Link to Repository
-
-## Link to Live Github App
