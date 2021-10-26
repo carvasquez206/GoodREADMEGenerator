@@ -1,74 +1,88 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 const fs = require('fs');
+const util = require("util");
 
-// Use writeFileSync method to use promises instead of a callback function
+const generatorMarkdown = require('./util/generateMarkdown');
 
-const promptUser = () => {
-  return inquirer.prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What is your name?',
-    },
-    {
-      type: 'input',
-      name: 'location',
-      message: 'Where are you from?',
-    },
-    {
-      type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
-    },
-    {
-      type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
-    },
-    {
-      type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username',
-    },
-    {
-      type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
-    },
-  ]);
-};
 
-const generateHTML = ({ name, location, github, linkedin }) =>
-  `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${name}</h1>
-    <p class="lead">I am from ${location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${github}</li>
-      <li class="list-group-item">LinkedIn: ${linkedin}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
+// array of questions for user
+const questions = [{
+        type: "input",
+        message: "What is the title of the project?",
+        name: "Title"
+    }, {
+        type: "input",
+        message: "What is the project about? Give a detailed description of your project?",
+        name: "Description"
+    }, {
+        type: "input",
+        message: "Table of Contents.",
+        name: "Table of Contents"
+    }, {
+        type: "input",
+        message: "What does the user need to install to run this app (ie...dependencies)?",
+        name: "Installation"
+    }, {
+        type: "input",
+        message: "How is the app used? Give instructions",
+        name: "Usage"
+    }, {
+        type: "input",
+        message: "What liscence is being used? (ie...MIT)",
+        name: "License"
+    }, {
+        type: "input",
+        message: "Who contributed to this project?:",
+        name: "Contributing"
+    }, {
+        type: "input",
+        message: "What commands are needed to test this app?",
+        name: "Tests"
+    }, {
+        type: "input",
+        message: "Contact info for inquiries.",
+        name: "Questions"
+    }, {
+        type: 'input',
+        message: 'What is your Github username?',
+        name: 'Username'
+    }, {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'Email'
+    },
 
-// Bonus using writeFileSync as a promise
-const init = () => {
-  promptUser()
-  // Use writeFileSync method to use promises instead of a callback function
-    .then((answers) => fs.writeFileSync('index.html', generateHTML(answers)))
-    .then(() => console.log('Successfully wrote to index.html'))
-    .catch((err) => console.error(err));
-};
+]
 
+// function to write README file
+function writeToFile(fileName, data) {
+
+    fs.writeFile(fileName, data, function(err) {
+        console.log(fileName)
+        console.log(data)
+        if (err) {
+            return console.log(err)
+        } else {
+            console.log("success")
+        }
+    })
+
+}
+
+
+
+
+
+// function to initialize program
+function init() {
+    inquirer.prompt(questions)
+        .then(function(data) {
+            writeToFile("README.md", generatorMarkdown(data));
+            console.log(data)
+
+        })
+
+}
+
+// function call to initialize program
 init();
