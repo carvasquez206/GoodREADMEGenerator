@@ -1,18 +1,19 @@
+// Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require('fs');
 const util = require("util");
-
+// Instead of using a html file, used a js one
 const generatorMarkdown = require('./util/generateMarkdown');
 
 
-// array of questions for user
+// Create an array of questions for user input
 const questions = [{
         type: "input",
         message: "What is the title of the project?",
         name: "Title"
     }, {
         type: "input",
-        message: "Describe what the project's about?",
+        message: "Describe what the project is about.",
         name: "Description"
     }, {
         type: "input",
@@ -24,7 +25,7 @@ const questions = [{
         name: "Installation"
     }, {
         type: "input",
-        message: "How is the app used? Give instructions",
+        message: "How is the app used? Give some instructions",
         name: "Usage"
     }, {
         type: "input",
@@ -51,10 +52,9 @@ const questions = [{
         message: 'What is your email address?',
         name: 'Email'
     },
-
 ]
 
-// function to write README file
+// Create a function to write README file
 function writeToFile(fileName, data) {
 
     fs.writeFile(fileName, data, function(err) {
@@ -70,10 +70,7 @@ function writeToFile(fileName, data) {
 }
 
 
-
-
-
-// function to initialize program
+// Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then(function(data) {
@@ -81,8 +78,7 @@ function init() {
             console.log(data)
 
         })
-
 }
 
-// function call to initialize program
+// Function call to initialize app
 init();

@@ -1,9 +1,9 @@
-// function to generate markdown for README
+// Function to generate markdown for README
 
 function generateMarkdown(data) {
     return `
 # ${data.Title}
-https://github.com/${data.Username}/${data.Title}
+https://github.com/carvasquez206/ReadMEGenarataaah
 # Description
 ${data.Description}
 # Table of Contents 
@@ -19,7 +19,7 @@ The following necessary dependencies must be installed to run the application pr
 In order to use this app, ${data.Usage}
 # License
 This project is licensed under the ${data.License} license. 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 # Contributing
 ​Contributors: ${data.Contributing}
 # Tests
@@ -30,3 +30,7 @@ If you have any questions about the repo, open an issue or contact ${data.Userna
 }
 
 module.exports = generateMarkdown;
+
+//link in line 6 won't work if I misspell the project name. I'm think of making it static. 
+//# ${data.Title}
+//https://github.com/${data.Username}/${data.Title}
