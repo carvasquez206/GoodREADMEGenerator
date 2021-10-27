@@ -16,7 +16,7 @@ The following necessary dependencies must be installed to run the application pr
 In order to use this app, By using the questions that are prompted in the terminal. Run: node index.js in the terminal and asnwer the questions provided
 # License
 This project is licensed under the Apache license. 
-![GitHub license](https://img.shields.io/badge//hexpm/l/:Apache2.svg)
+![GitHub license](https://img.shields.io/badge/hexpm/l/:Apache2.svg)
 # Contributing
 ​Contributors: Carlos (me)
 # Tests
