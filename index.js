@@ -12,7 +12,7 @@ const questions = [{
         name: "Title"
     }, {
         type: "input",
-        message: "What is the project about? Give a detailed description of your project?",
+        message: "Describe what the project's about?",
         name: "Description"
     }, {
         type: "input",
@@ -20,7 +20,7 @@ const questions = [{
         name: "Table of Contents"
     }, {
         type: "input",
-        message: "What does the user need to install to run this app (ie...dependencies)?",
+        message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
         name: "Installation"
     }, {
         type: "input",
@@ -28,7 +28,7 @@ const questions = [{
         name: "Usage"
     }, {
         type: "input",
-        message: "What liscence is being used? (ie...MIT)",
+        message: "What liscence is being used? (e.g. Apache, MIT, etc.)",
         name: "License"
     }, {
         type: "input",
