@@ -1,5 +1,5 @@
 
-# README GEnerataaaaa
+# GoodREADMEGenerator
 https://github.com/cavasquez/README GEnerataaaaa
 # Description
 Implementing Node.Js to generate a README file
